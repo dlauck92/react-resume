@@ -348,7 +348,7 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/dlauck92'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/12227328/drew-lauck'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/drew-lauck/'},
+  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/dlauck92', target: '_blank', rel: 'noopener noreferrer'},
+  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/12227328/drew-lauck', target: '_blank', rel: 'noopener noreferrer'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/drew-lauck/', target: '_blank', rel: 'noopener noreferrer'},
 ];
