@@ -3,7 +3,7 @@ import {
   ArrowDownTrayIcon,
   BuildingOffice2Icon,
   CalendarIcon,
-  FlagIcon,
+  // FlagIcon,
   MapIcon,
   SparklesIcon,
 } from '@heroicons/react/24/outline';
@@ -44,8 +44,8 @@ import {
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: 'React Resume Template',
-  description: "Example site built with Tim Baker's react resume template",
+  title: 'Drew Lauck | Resume',
+  description: "A sleek and interactive React-based resume website showcasing my skills, experience, and projects. Built with React, Flask, and Tailwind CSS for a modern, responsive design.",
 };
 
 /**
@@ -73,14 +73,12 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a U.S. based <strong className="text-stone-100">DevOps Engineer</strong>, currently working
-        at <strong className="text-stone-100">Instant Domains</strong> helping build a modern, mobile-first, domain
-        registrar and site builder.
+        I'm a U.S. based <strong className="text-stone-100">Cloud Engineer</strong>, currently looking for work as a Cloud Engineer, DevOps Engineer or similar position.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me training in <strong className="text-stone-100">Muay Thai</strong>,
-        plucking my <strong className="text-stone-100">banjo</strong>, or exploring beautiful{' '}
-        <strong className="text-stone-100">Vancouver Island</strong>.
+        In my free time time, I'm typically travelling,
+        trying out new recipes, reading, or hiking with my dog Vito in the beautiful{' '}
+        <strong className="text-stone-100">Greater Cleveland area</strong>.
       </p>
     </>
   ),
@@ -109,10 +107,10 @@ export const aboutData: About = {
   aboutItems: [
     {label: 'Location', text: 'Cleveland, OH', Icon: MapIcon},
     {label: 'Age', text: '32', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'American', Icon: FlagIcon},
-    {label: 'Interests', text: 'Motorcycles, Muay Thai, Banjos', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of Victoria', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},
+    // {label: 'Nationality', text: 'American', Icon: FlagIcon},
+    {label: 'Study', text: 'Case Western Reserve - Coding Bootcamp', Icon: AcademicCapIcon},
+    {label: 'Employment', text: 'Looking for work', Icon: BuildingOffice2Icon},
+    {label: 'Interests', text: 'Cooking, Reading, Video Games, Hiking', Icon: SparklesIcon}
   ],
 };
 
@@ -267,28 +265,30 @@ export const portfolioItems: PortfolioItem[] = [
  */
 export const education: TimelineItem[] = [
   {
-    date: 'April 2007',
-    location: 'Clown college',
-    title: 'Masters in Beer tasting',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: 'April 2019',
+    location: 'Case Western Reserve University',
+    title: 'Coding Bootcamp',
+    content: <p>Worked with peers to learn HTML, CSS, JavaScript and MERN stack.</p>,
   },
   {
-    date: 'March 2003',
-    location: 'School of Business',
-    title: 'What did you study 101',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: 'March 2011',
+    location: 'Lima Central Catholic HS',
+    title: 'High School',
+    content: <p></p>,
   },
 ];
 
 export const experience: TimelineItem[] = [
   {
-    date: 'March 2010 - Present',
-    location: 'Awesome Development Company',
-    title: 'Senior UX Engineer',
+    date: 'October 2023 - September 2024',
+    location: 'Delinea',
+    title: 'Tier 2 Technical Support Engineer',
     content: (
       <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
+          Worked with Azure, Active Directory, Private Access Management systems, VMware, Slack, Datadog, macOS, Windows and SalesForce. Assisted customers via tickets or call to create/manage policies to provide least
+          privileged access across their entire company to ensure security. Answered questions from team about cases, roadmaps and development issues.
+          Helped development team investigate bugs and contribute to brainstorming for solutions.
+          Assisted with training new hires by working with them on cases and invite to calls with clients.
       </p>
     ),
   },
