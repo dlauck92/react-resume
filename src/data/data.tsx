@@ -105,12 +105,12 @@ export const aboutData: About = {
   description: `I'm Drew Lauck, a Cloud Engineer with a strong focus on DevOps, automation, and cloud infrastructure in Azure and AWS. I specialize in system optimization, access management, and debugging while leveraging tools like Active Directory, VMware, and Datadog.
   Passionate about scalability, security, and efficiency, I’m always exploring new technologies to improve cloud operations and streamline DevOps workflows.`,
   aboutItems: [
-    {label: 'Location', text: 'Cleveland, OH', Icon: MapIcon},
-    {label: 'Age', text: '32', Icon: CalendarIcon},
+    { label: 'Location', text: 'Cleveland, OH', Icon: MapIcon },
+    { label: 'Age', text: '32', Icon: CalendarIcon },
     // {label: 'Nationality', text: 'American', Icon: FlagIcon},
-    {label: 'Study', text: 'Case Western Reserve - Coding Bootcamp', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Looking for work', Icon: BuildingOffice2Icon},
-    {label: 'Interests', text: 'Cooking, Reading, Video Games, Hiking', Icon: SparklesIcon}
+    { label: 'Study', text: 'Case Western Reserve - Coding Bootcamp', Icon: AcademicCapIcon },
+    { label: 'Employment', text: 'Looking for work', Icon: BuildingOffice2Icon },
+    { label: 'Interests', text: 'Cooking, Reading, Video Games, Hiking', Icon: SparklesIcon }
   ],
 };
 
@@ -285,21 +285,67 @@ export const experience: TimelineItem[] = [
     title: 'Tier 2 Technical Support Engineer',
     content: (
       <p>
-          Worked with Azure, Active Directory, Private Access Management systems, VMware, Slack, Datadog, macOS, Windows and SalesForce. Assisted customers via tickets or call to create/manage policies to provide least
-          privileged access across their entire company to ensure security. Answered questions from team about cases, roadmaps and development issues.
-          Helped development team investigate bugs and contribute to brainstorming for solutions.
-          Assisted with training new hires by working with them on cases and invite to calls with clients.
+        Worked with Azure, Active Directory, Private Access Management systems, VMware, Slack, Datadog, macOS, Windows and SalesForce. 
+        Assisted customers via tickets or call to create/manage policies to provide least
+        privileged access across their entire company to ensure security. Answered questions from team about cases, roadmaps and development issues.
+        Helped development team investigate bugs and contribute to brainstorming for solutions.
+        Assisted with training new hires by working with them on cases and invite to calls with clients.
       </p>
     ),
   },
   {
-    date: 'March 2007 - February 2010',
-    location: 'Garage Startup Studio',
-    title: 'Junior bug fixer',
+    date: 'March 2023 - October 2023',
+    location: 'thunder::tech',
+    title: 'SysOps Support Developer 2',
     content: (
       <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
+        Monitored system performance and identified areas for improvement in existing
+        applications. Conducted regular audits of existing systems infrastructure in order to identify
+        potential risks or vulnerabilities. Developed scripts in order to automate routine tasks
+        within the IT environment. Troubleshot application errors in production environments (Kentico, Umbraco,
+        WordPress, and Sitefinity) and worked with development teams to resolve issues
+        quickly. Created detailed internal documentation of system configurations, processes,
+        and procedures for reference purposes. Implemented software patches and upgrades while ensuring minimal disruption
+        to operations.
+      </p>
+    ),
+  },
+  {
+    date: 'December 2022 - March 2023',
+    location: 'thunder::tech',
+    title: 'SysOps Support Developer',
+    content: (
+      <p>
+        Maintained inventory of all software licenses associated with supported
+        applications. Maintained inventory of all software licenses associated with supported
+        applications. Performed and lead QA testing for applications. Created technical documentation for specific disciplines to help optimize
+        processes. Recommended and installed hardware solutions to meet business needs. Recommended and installed hardware solutions to meet business needs.
+      </p>
+    ),
+  },
+  {
+    date: 'August 2020 - December 2022',
+    location: 'thunder::tech',
+    title: 'Digital Support/.NET Developer',
+    content: (
+      <p>
+        Reviewed and assessed incoming support request. These were then sent out to
+        other members on the team based on skill level or relevance. Resolved and de-escalated issues to address customer concerns. 
+        Resolved several low - medium priority support requests. Utilized problem solving skills to effectively handle difficult situations.
+      </p>
+    ),
+  },
+  {
+    date: 'September 2019 - June 2020',
+    location: 'Water Bear Marketing',
+    title: 'Developer',
+    content: (
+      <p>
+        Performed unit testing of code to ensure application functionality. Made pragmatic and data-driven decisions to meet business and technology
+        needs. Wrote and updated computer programs or software packages to handle specific
+        tasks. Integrated third-party libraries into existing applications for added features and
+        functionality. Developed complex web applications using HTML, CSS, JavaScript and JQuery
+        technologies.
       </p>
     ),
   },
@@ -348,7 +394,7 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/dlauck92', target: '_blank', rel: 'noopener noreferrer'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/12227328/drew-lauck', target: '_blank', rel: 'noopener noreferrer'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/drew-lauck/', target: '_blank', rel: 'noopener noreferrer'},
+  { label: 'Github', Icon: GithubIcon, href: 'https://github.com/dlauck92', target: '_blank', rel: 'noopener noreferrer' },
+  { label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/12227328/drew-lauck', target: '_blank', rel: 'noopener noreferrer' },
+  { label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/drew-lauck/', target: '_blank', rel: 'noopener noreferrer' },
 ];
