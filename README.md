@@ -56,7 +56,3 @@ Feel free to connect with me:
 - GitHub: [@dlauck92](https://github.com/dlauck92)
 - LinkedIn: [Drew Lauck](https://www.linkedin.com/in/drew-lauck/)
 
----
-
-Let’s build something awesome! 🚀
-
