@@ -1,11 +1,5 @@
 import React, { FC, memo, useCallback, useMemo, useState } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
-
-interface FormData {
-  name: string;
-  email: string;
-  message: string;
-}
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 const ContactForm: FC = memo(() => {
   const defaultData = useMemo(
@@ -17,9 +11,10 @@ const ContactForm: FC = memo(() => {
     [],
   );
 
-  const [data, setData] = useState<FormData>(defaultData);
+  const [data, setData] = useState(defaultData);
   const [isLoading, setIsLoading] = useState(false);
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const onChange = useCallback(
     <T extends HTMLInputElement | HTMLTextAreaElement>(event: React.ChangeEvent<T>): void => {
@@ -32,7 +27,15 @@ const ContactForm: FC = memo(() => {
   const handleSendMessage = useCallback(
     async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-      if (!recaptchaToken) {
+
+      if (!executeRecaptcha) {
+        alert('reCAPTCHA is not available.');
+        return;
+      }
+
+      const token = await executeRecaptcha('contact_form'); // Generate reCAPTCHA token
+
+      if (!token) {
         alert('Please complete the reCAPTCHA.');
         return;
       }
@@ -45,7 +48,7 @@ const ContactForm: FC = memo(() => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ ...data, recaptchaToken }),
+          body: JSON.stringify({ ...data, recaptchaToken: token }),
         });
 
         if (response.ok) {
@@ -62,7 +65,7 @@ const ContactForm: FC = memo(() => {
         setIsLoading(false);
       }
     },
-    [data, defaultData, recaptchaToken],
+    [data, defaultData, executeRecaptcha],
   );
 
   const inputClasses =
@@ -88,11 +91,6 @@ const ContactForm: FC = memo(() => {
         placeholder="Message"
         required
         rows={6}
-      />
-      <ReCAPTCHA
-        sitekey="6Ld7vAUrAAAAAHM87_hk0QFD2ur_UpuF0bUbekBG"
-        onChange={(token) => setRecaptchaToken(token)}
-        onExpired={() => setRecaptchaToken(null)} // Reset token if expired
       />
       <button
         aria-label="Submit contact form"

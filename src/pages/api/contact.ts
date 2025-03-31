@@ -32,15 +32,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: `secret=${RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
   });
-  const recaptchaResult = await recaptchaResponse.json();
+  const recaptchaResult = (await recaptchaResponse.json()) as { success: boolean };
 
   if (!recaptchaResult.success) {
     return res.status(400).json({ success: false, message: 'reCAPTCHA verification failed.' });
   }
 
   const msg = {
-    to: 'drewlauck820@gmail.com', // Replace with your email
-    from: 'drewlauck820@gmail.com', // Replace with a verified sender
+    to: 'drewlauck820@gmail.com',
+    from: 'drewlauck820@gmail.com',
     subject: `New Contact Form Submission from ${name}`,
     text: `You have a new message from ${name} (${email}):\n\n${message}`,
   };
