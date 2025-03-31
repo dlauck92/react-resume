@@ -105,7 +105,7 @@ export const aboutData: About = {
   description: `I'm Drew Lauck, a Cloud Engineer with a strong focus on DevOps, automation, and cloud infrastructure in Azure and AWS. I specialize in system optimization, access management, and debugging while leveraging tools like Active Directory, VMware, and Datadog.
   Passionate about scalability, security, and efficiency, I’m always exploring new technologies to improve cloud operations and streamline DevOps workflows.`,
   aboutItems: [
-    { label: 'Location', text: 'Cleveland, OH', Icon: MapIcon },
+    { label: 'Location', text: 'Westlake, OH', Icon: MapIcon },
     { label: 'Age', text: '32', Icon: CalendarIcon },
     // {label: 'Nationality', text: 'American', Icon: FlagIcon},
     { label: 'Study', text: 'Case Western Reserve - Coding Bootcamp', Icon: AcademicCapIcon },
@@ -119,18 +119,18 @@ export const aboutData: About = {
  */
 export const skills: SkillGroup[] = [
   {
-    name: 'Spoken languages',
+    name: 'Cloud Engineering',
     skills: [
       {
-        name: 'English',
-        level: 10,
+        name: 'AWS',
+        level: 8,
       },
       {
-        name: 'French',
-        level: 4,
+        name: 'Azure',
+        level: 5,
       },
       {
-        name: 'Spanish',
+        name: 'Google',
         level: 3,
       },
     ],
