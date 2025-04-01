@@ -8,11 +8,14 @@ This is a **React-based resume website** designed to showcase my professional ex
 - **Next.js framework** for optimized performance
 - **Dynamic components** for easy updates and scalability
 - **Social media links** with external navigation
-- **Deployment-ready** for hosting on platforms like Vercel or Netlify
+- **Secure contact form** with Google reCAPTCHA v3 integration
+- **API routes** for handling form submissions
 
 ## Tech Stack
 - **Frontend:** Next.js (React), Tailwind CSS
-- **Deployment:** Vercel, Netlify, or other hosting services
+- **Backend:** Next.js API routes
+- **Email Service:** SendGrid
+- **Spam Protection:** Google reCAPTCHA v3
 
 ## Installation & Setup
 To run this project locally:
@@ -28,28 +31,35 @@ To run this project locally:
    yarn install
    ```
 
-3. Start the development server:
+3. Create a `.env.local` file in the root directory and add the following environment variables:
+   ```env
+   SG_API_KEY=your-sendgrid-api-key
+   RECAPTCHA_SECRET_KEY=your-recaptcha-secret-key
+   NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your-recaptcha-site-key
+   ```
+
+4. Start the development server:
    ```sh
    yarn dev
    ```
 
+5. Open your browser and navigate to:
+   ```
+   http://localhost:3000
+   ```
+
 ## Usage
-- Customize content in `src/data/profile.ts` (or similar file).
+- Customize content in `src/data/data.tsx` (e.g., portfolio items, contact info).
 - Modify styles in `tailwind.config.js`.
-- Update social links in `src/components/SocialLinks.tsx`.
+- Update social links in `src/components/Sections/Contact/index.tsx`.
 
-## Deployment
-For deploying on **Vercel**:
-1. Install Vercel CLI:
-   ```sh
-   npm install -g vercel
-   ```
-2. Deploy:
-   ```sh
-   vercel
-   ```
-
-Alternatively, deploy on **Netlify** by connecting the repo in the Netlify dashboard.
+## Scripts
+| Command           | Description                                   |
+|--------------------|-----------------------------------------------|
+| `yarn dev`        | Starts the development server.               |
+| `yarn build`      | Builds the project for production.           |
+| `yarn start`      | Starts the production server.                |
+| `yarn lint`       | Runs ESLint to check for code issues.         |
 
 ## Contact
 Feel free to connect with me:
