@@ -1,4 +1,4 @@
-// eslint-disable-next-line no-undef
+/* eslint-disable no-undef */
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   // darkMode: 'media', // or 'media' or 'class'
@@ -33,7 +33,6 @@ module.exports = {
       },
     },
   },
-  // eslint-disable-next-line no-undef
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
