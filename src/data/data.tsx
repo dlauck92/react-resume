@@ -15,16 +15,16 @@ import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
 // import TwitterIcon from '../components/Icon/TwitterIcon';
 import heroImage from '../images/header-background.webp';
 import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
-import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
-import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
-import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
-import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
-import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
-import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
-import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
-import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
-import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
-import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
+// import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
+// import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
+// import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
+// import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
+// import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
+// import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
+// import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
+// import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
+// import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
+// import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
 import profilepic from '../images/profilepic.jpg';
 // import testimonialImage from '../images/testimonial.webp';
 import {
@@ -193,71 +193,48 @@ export const skills: SkillGroup[] = [
  */
 export const portfolioItems: PortfolioItem[] = [
   {
-    title: 'Project title 1',
+    title: 'SpaceX Rocket Launches',
     description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
+    url: 'https://github.com/dlauck92/react-apollo-graphql-spacex',
     image: porfolioImage1,
   },
   {
-    title: 'Project title 2',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage2,
+    title: '100 Days of Code',
+    description: 'Python Udemy Course Going through 100 days of code.',
+    url: 'https://github.com/dlauck92/100-days-of-code',
+    image: porfolioImage1,
   },
   {
-    title: 'Project title 3',
+    title: 'SpaceX Rocket Launches',
     description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage3,
+    url: 'https://github.com/dlauck92/react-apollo-graphql-spacex',
+    image: porfolioImage1,
   },
   {
-    title: 'Project title 4',
+    title: 'SpaceX Rocket Launches',
     description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage4,
+    url: 'https://github.com/dlauck92/react-apollo-graphql-spacex',
+    image: porfolioImage1,
   },
   {
-    title: 'Project title 5',
+    title: 'SpaceX Rocket Launches',
     description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage5,
+    url: 'https://github.com/dlauck92/react-apollo-graphql-spacex',
+    image: porfolioImage1,
   },
   {
-    title: 'Project title 6',
+    title: 'SpaceX Rocket Launches',
     description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage6,
+    url: 'https://github.com/dlauck92/react-apollo-graphql-spacex',
+    image: porfolioImage1,
   },
   {
-    title: 'Project title 7',
+    title: 'SpaceX Rocket Launches',
     description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage7,
-  },
-  {
-    title: 'Project title 8',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage8,
-  },
-  {
-    title: 'Project title 9',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage9,
-  },
-  {
-    title: 'Project title 10',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage10,
-  },
-  {
-    title: 'Project title 11',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage11,
-  },
+    url: 'https://github.com/dlauck92/react-apollo-graphql-spacex',
+    image: porfolioImage1,
+  }
+
 ];
 
 /**
@@ -365,7 +342,7 @@ export const testimonial: TestimonialSection = {
 
 export const contact: ContactSection = {
   headerText: 'Get in touch.',
-  description: 'Here is a good spot for a message to your readers to let them know how best to reach out to you.',
+  description: 'Feel free to reach out with any questions, opportunities, or collaborations. I look forward to connecting with you!',
   items: [
     {
       type: ContactType.Email,
