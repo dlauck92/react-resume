@@ -1,4 +1,3 @@
-// filepath: c:\dev\react-resume\src\pages\api\contact.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 import sgMail from '@sendgrid/mail';
 import fetch from 'node-fetch';
