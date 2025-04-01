@@ -1,5 +1,5 @@
-import React, { FC, memo, useCallback, useMemo, useState } from 'react';
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import React, {FC, memo, useCallback, useMemo, useState} from 'react';
+import {useGoogleReCaptcha} from 'react-google-recaptcha-v3';
 
 const ContactForm: FC = memo(() => {
   const defaultData = useMemo(
@@ -14,12 +14,12 @@ const ContactForm: FC = memo(() => {
   const [data, setData] = useState(defaultData);
   const [isLoading, setIsLoading] = useState(false);
 
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  const {executeRecaptcha} = useGoogleReCaptcha();
 
   const onChange = useCallback(
     <T extends HTMLInputElement | HTMLTextAreaElement>(event: React.ChangeEvent<T>): void => {
-      const { name, value } = event.target;
-      setData({ ...data, [name]: value });
+      const {name, value} = event.target;
+      setData({...data, [name]: value});
     },
     [data],
   );
@@ -48,7 +48,7 @@ const ContactForm: FC = memo(() => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ ...data, recaptchaToken: token }),
+          body: JSON.stringify({...data, recaptchaToken: token}),
         });
 
         if (response.ok) {

@@ -1,5 +1,5 @@
-import { NextApiRequest, NextApiResponse } from 'next';
 import sgMail from '@sendgrid/mail';
+import {NextApiRequest, NextApiResponse} from 'next';
 import fetch from 'node-fetch';
 
 const SendGrid_API_KEY = process.env.SG_API_KEY;
@@ -14,27 +14,34 @@ if (!RECAPTCHA_SECRET_KEY) {
 
 sgMail.setApiKey(SendGrid_API_KEY);
 
+interface SendGridError extends Error {
+  response?: {
+    body: unknown;
+  };
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ success: false, message: 'Method not allowed' });
+    return res.status(405).json({success: false, message: 'Method not allowed'});
   }
 
-  const { name, email, message, recaptchaToken } = req.body;
+  const {name, email, message, recaptchaToken} = req.body;
 
   if (!name || !email || !message || !recaptchaToken) {
-    return res.status(400).json({ success: false, message: 'Missing required fields' });
+    return res.status(400).json({success: false, message: 'Missing required fields'});
   }
 
   // Verify reCAPTCHA token
-  const recaptchaResponse = await fetch(`https://www.google.com/recaptcha/api/siteverify`, {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const recaptchaResponse: any = await fetch(`https://www.google.com/recaptcha/api/siteverify`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
     body: `secret=${RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
   });
   const recaptchaResult = (await recaptchaResponse.json()) as { success: boolean };
 
   if (!recaptchaResult.success) {
-    return res.status(400).json({ success: false, message: 'reCAPTCHA verification failed.' });
+    return res.status(400).json({success: false, message: 'reCAPTCHA verification failed.'});
   }
 
   const msg = {
@@ -46,23 +53,30 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   try {
     await sgMail.send(msg);
-    return res.status(200).json({ success: true, message: 'Email sent successfully!' });
-  } catch (error: any) {
+    return res.status(200).json({success: true, message: 'Email sent successfully!'});
+  } catch (error: unknown) {
     console.error('Error sending email:', error);
 
-    if (error.response) {
-      console.error('SendGrid response error:', error.response.body);
+    if ((error as SendGridError).response) {
+      console.error('SendGrid response error:', (error as SendGridError).response?.body);
       return res.status(500).json({
         success: false,
         message: 'Failed to send email.',
-        error: error.response.body,
+        error: (error as SendGridError).response?.body,
+      });
+    }
+
+    if (error instanceof Error) {
+      return res.status(500).json({
+        success: false,
+        message: 'Failed to send email.',
+        error: error.message,
       });
     }
 
     return res.status(500).json({
       success: false,
-      message: 'Failed to send email.',
-      error: error.message,
+      message: 'An unknown error occurred.',
     });
   }
 }

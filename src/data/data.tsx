@@ -105,12 +105,12 @@ export const aboutData: About = {
   description: `I'm Drew Lauck, a Cloud Engineer with a strong focus on DevOps, automation, and cloud infrastructure in Azure and AWS. I specialize in system optimization, access management, and debugging while leveraging tools like Active Directory, VMware, and Datadog.
   Passionate about scalability, security, and efficiency, I’m always exploring new technologies to improve cloud operations and streamline DevOps workflows.`,
   aboutItems: [
-    { label: 'Location', text: 'Westlake, OH', Icon: MapIcon },
-    { label: 'Age', text: '32', Icon: CalendarIcon },
+    {label: 'Location', text: 'Westlake, OH', Icon: MapIcon},
+    {label: 'Age', text: '32', Icon: CalendarIcon},
     // {label: 'Nationality', text: 'American', Icon: FlagIcon},
-    { label: 'Study', text: 'Case Western Reserve - Coding Bootcamp', Icon: AcademicCapIcon },
-    { label: 'Employment', text: 'Looking for work', Icon: BuildingOffice2Icon },
-    { label: 'Interests', text: 'Cooking, Reading, Video Games, Hiking', Icon: SparklesIcon }
+    {label: 'Study', text: 'Case Western Reserve - Coding Bootcamp', Icon: AcademicCapIcon},
+    {label: 'Employment', text: 'Looking for work', Icon: BuildingOffice2Icon},
+    {label: 'Interests', text: 'Cooking, Reading, Video Games, Hiking', Icon: SparklesIcon}
   ],
 };
 
@@ -371,7 +371,7 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  { label: 'Github', Icon: GithubIcon, href: 'https://github.com/dlauck92', target: '_blank', rel: 'noopener noreferrer' },
-  { label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/12227328/drew-lauck', target: '_blank', rel: 'noopener noreferrer' },
-  { label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/drew-lauck/', target: '_blank', rel: 'noopener noreferrer' },
+  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/dlauck92', target: '_blank', rel: 'noopener noreferrer'},
+  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/12227328/drew-lauck', target: '_blank', rel: 'noopener noreferrer'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/drew-lauck/', target: '_blank', rel: 'noopener noreferrer'},
 ];
