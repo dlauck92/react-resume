@@ -4,36 +4,39 @@ on:
   push:
     branches:
       - master
-        
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-        - name: Checkout code
-          uses: actions/checkout@v4
-        - name: Create .env file
-          run: |
-            echo "RECAPTCHA_SECRET_KEY=${{ secrets.RECAPTCHA_SECRET_KEY }}" >> .env
-            echo "RECAPTCHA_SITE_KEY=${{ secrets.RECAPTCHA_SITE_KEY }}" >> .env
-            echo "SG_API_KEY=${{ secrets.SG_API_KEY }}" >> .env
-            echo "SITE_URL=${{ secrets.SITE_URL }}" >> .env
-        - name: Build docker image
-          run: docker build -t resume-website .
-        - name: Login to docker hub
-          run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_ACCESS_TOKEN }}
-        - name: Push docker image
-          run: docker push ${{ secrets.DOCKER_USERNAME }}/resume-website:latest
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Create .env file
+        run: |
+          echo "RECAPTCHA_SECRET_KEY=${{ secrets.RECAPTCHA_SECRET_KEY }}" >> .env
+          echo "RECAPTCHA_SITE_KEY=${{ secrets.RECAPTCHA_SITE_KEY }}" >> .env
+          echo "SG_API_KEY=${{ secrets.SG_API_KEY }}" >> .env
+          echo "SITE_URL=${{ secrets.SITE_URL }}" >> .env
+      - name: Build docker image
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/resume-website:latest .
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
+      - name: Push docker image
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/resume-website:latest
 
   deploy:
     needs: build
     runs-on: self-hosted
     steps:
-        - name: Pull docker image
-          run: docker pull ${{ secrets.DOCKER_USERNAME }}/resume-website:latest
-        - name: Stop and remove existing container
-          run: |
-            docker stop resume-website-container || true
-            docker rm resume-website-container || true
-        - name: Run docker container
-          run: docker run -d -p 3000:3000 --name resume-website-container dlauck92/resume-website
+      - name: Pull docker image
+        run: docker pull ${{ secrets.DOCKER_USERNAME }}/resume-website:latest
+      - name: Stop and remove existing container
+        run: |
+          docker stop resume-website-container || true
+          docker rm resume-website-container || true
+      - name: Run docker container
+        run: docker run -d -p 3000:3000 --name resume-website-container ${{ secrets.DOCKER_USERNAME }}/resume-website:latest
 
