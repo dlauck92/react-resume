@@ -37,6 +37,9 @@ jobs:
         run: |
           docker stop resume-website-container || true
           docker rm resume-website-container || true
+      - name: Clean up unused Docker resources
+        run: |
+          docker system prune -a -f
       - name: Run docker container
         run: docker run -d -p 3000:3000 --name resume-website-container ${{ secrets.DOCKER_USERNAME }}/resume-website:latest
 

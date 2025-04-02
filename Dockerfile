@@ -16,6 +16,9 @@ COPY . .
 # Build the Next.js application
 RUN yarn build
 
+# After building the app, clean up node_modules in the builder stage
+RUN rm -rf node_modules
+
 # Step 2: Create a lightweight production image
 FROM node:20-alpine3.21 as runner
 
