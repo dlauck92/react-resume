@@ -31,15 +31,15 @@ jobs:
     needs: build
     runs-on: self-hosted
     steps:
-      - name: Pull docker image
-        run: docker pull ${{ secrets.DOCKER_USERNAME }}/resume-website:latest
-      - name: Stop and remove existing container
-        run: |
-          docker stop resume-website-container || true
-          docker rm resume-website-container || true
       - name: Clean up unused Docker resources
         run: |
-          docker system prune -a -f
+          docker stop $(docker ps -aq) || true
+          docker rm $(docker ps -aq) || true
+          docker rmi $(docker images -q) -f || true
+          docker volume rm $(docker volume ls -q) || true
+          docker system prune -a --volumes -f
+      - name: Pull docker image
+        run: docker pull ${{ secrets.DOCKER_USERNAME }}/resume-website:latest
       - name: Run docker container
         run: docker run -d -p 3000:3000 --name resume-website-container ${{ secrets.DOCKER_USERNAME }}/resume-website:latest
 
