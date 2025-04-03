@@ -2,17 +2,17 @@ import sgMail from '@sendgrid/mail';
 import {NextApiRequest, NextApiResponse} from 'next';
 import fetch from 'node-fetch';
 
-const SendGrid_API_KEY = process.env.SG_API_KEY;
+const SG_API_KEY = process.env.SG_API_KEY;
 const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
 
-if (!SendGrid_API_KEY) {
+if (!SG_API_KEY) {
   throw new Error('SENDGRID_API_KEY is not defined in the environment variables.');
 }
 if (!RECAPTCHA_SECRET_KEY) {
   throw new Error('RECAPTCHA_SECRET_KEY is not defined in the environment variables.');
 }
 
-sgMail.setApiKey(SendGrid_API_KEY);
+sgMail.setApiKey(SG_API_KEY);
 
 interface SendGridError extends Error {
   response?: {
