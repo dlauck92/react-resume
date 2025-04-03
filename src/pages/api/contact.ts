@@ -5,7 +5,7 @@ import fetch from 'node-fetch';
 const SG_API_KEY = process.env.SG_API_KEY;
 const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
 
-// console.log('SG_API_KEY:', process.env.SG_API_KEY);
+console.log('SG_API_KEY:', process.env.SG_API_KEY);
 
 if (!SG_API_KEY) {
   throw new Error('SENDGRID_API_KEY is not defined in the environment variables.');
