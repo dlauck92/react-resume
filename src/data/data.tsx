@@ -44,7 +44,7 @@ import {
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: 'Drew Lauck | Resume!',
+  title: 'Drew Lauck | Resume',
   description: "A sleek and interactive React-based resume website showcasing my skills, experience, and projects. Built with React, Flask, and Tailwind CSS for a modern, responsive design.",
 };
 
@@ -205,8 +205,8 @@ export const portfolioItems: PortfolioItem[] = [
     image: porfolioImage1,
   },
   {
-    title: 'SpaceX Rocket Launches',
-    description: 'Give a short description of your project here.',
+    title: 'Lambda Image Resizer',
+    description: 'A lightweight, serverless image processing tool built with AWS Lambda and Sharp. It automatically resizes images uploaded to an S3 bucket and saves the optimized output to a destination bucket—scalable, efficient, and fully cloud-native.',
     url: 'https://github.com/dlauck92/react-apollo-graphql-spacex',
     image: porfolioImage1,
   },

@@ -13,6 +13,8 @@ const ContactForm: FC = memo(() => {
 
   const [data, setData] = useState(defaultData);
   const [isLoading, setIsLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState<string | null>(null);
+  const [statusType, setStatusType] = useState<'success' | 'error' | null>(null);
 
   const {executeRecaptcha} = useGoogleReCaptcha();
 
@@ -29,18 +31,21 @@ const ContactForm: FC = memo(() => {
       event.preventDefault();
 
       if (!executeRecaptcha) {
-        alert('reCAPTCHA is not available.');
+        setStatusMessage('reCAPTCHA is not available.');
+        setStatusType('error');
         return;
       }
 
       const token = await executeRecaptcha('contact_form'); // Generate reCAPTCHA token
 
       if (!token) {
-        alert('Please complete the reCAPTCHA.');
+        setStatusMessage('Please complete the reCAPTCHA.');
+        setStatusType('error');
         return;
       }
 
       setIsLoading(true);
+      setStatusMessage(null); // Clear any previous status message
 
       try {
         const response = await fetch('/api/contact', {
@@ -52,15 +57,18 @@ const ContactForm: FC = memo(() => {
         });
 
         if (response.ok) {
-          alert('Message sent successfully!');
+          setStatusMessage('Message sent successfully!');
+          setStatusType('success');
           setData(defaultData); // Reset form after successful submission
         } else {
           const errorData = await response.json();
-          alert(`Failed to send message: ${errorData.message}`);
+          setStatusMessage(`Failed to send message: ${errorData.message}`);
+          setStatusType('error');
         }
       } catch (error) {
         console.error('Error sending message:', error);
-        alert('An error occurred. Please try again.');
+        setStatusMessage('An error occurred. Please try again.');
+        setStatusType('error');
       } finally {
         setIsLoading(false);
       }
@@ -100,6 +108,17 @@ const ContactForm: FC = memo(() => {
       >
         {isLoading ? 'Sending...' : 'Send Message'}
       </button>
+
+      {/* Status Message */}
+      {statusMessage && (
+        <p
+          className={`text-sm mt-2 ${
+            statusType === 'success' ? 'text-green-500' : 'text-red-500'
+          }`}
+        >
+          {statusMessage}
+        </p>
+      )}
     </form>
   );
 });
