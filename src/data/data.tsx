@@ -199,41 +199,23 @@ export const portfolioItems: PortfolioItem[] = [
     image: porfolioImage1,
   },
   {
+    title: 'Lambda Image Resizer',
+    description: 'A lightweight, serverless image processing tool built with AWS Lambda and Sharp. It automatically resizes images uploaded to an S3 bucket and saves the optimized output to a destination bucket—scalable, efficient, and fully cloud-native.',
+    url: 'https://github.com/dlauck92/lambda-image-resizer',
+    image: porfolioImage1,
+  },
+  {
+    title: 'Weather Application',
+    description: 'A simple weather application built with React, Bootstrap, National Weather Service API, Python and Flask. It provides weather updates and forecasts for any location based on City and State.',
+    url: 'https://github.com/dlauck92/weather-app',
+    image: porfolioImage1,
+  },
+  {
     title: '100 Days of Code',
     description: 'Python Udemy Course Going through 100 days of code.',
     url: 'https://github.com/dlauck92/100-days-of-code',
     image: porfolioImage1,
   },
-  {
-    title: 'Lambda Image Resizer',
-    description: 'A lightweight, serverless image processing tool built with AWS Lambda and Sharp. It automatically resizes images uploaded to an S3 bucket and saves the optimized output to a destination bucket—scalable, efficient, and fully cloud-native.',
-    url: 'https://github.com/dlauck92/react-apollo-graphql-spacex',
-    image: porfolioImage1,
-  },
-  {
-    title: 'SpaceX Rocket Launches',
-    description: 'Give a short description of your project here.',
-    url: 'https://github.com/dlauck92/react-apollo-graphql-spacex',
-    image: porfolioImage1,
-  },
-  {
-    title: 'SpaceX Rocket Launches',
-    description: 'Give a short description of your project here.',
-    url: 'https://github.com/dlauck92/react-apollo-graphql-spacex',
-    image: porfolioImage1,
-  },
-  {
-    title: 'SpaceX Rocket Launches',
-    description: 'Give a short description of your project here.',
-    url: 'https://github.com/dlauck92/react-apollo-graphql-spacex',
-    image: porfolioImage1,
-  },
-  {
-    title: 'SpaceX Rocket Launches',
-    description: 'Give a short description of your project here.',
-    url: 'https://github.com/dlauck92/react-apollo-graphql-spacex',
-    image: porfolioImage1,
-  }
 
 ];
 
