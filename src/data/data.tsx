@@ -73,21 +73,22 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a U.S. based <strong className="text-stone-100">Cloud Engineer</strong>, currently looking for work as a Cloud Engineer, DevOps Engineer or similar position.
+        I'm a U.S. based <strong className="text-stone-100">Cloud Engineer</strong>, currently looking for work as a Cloud Engineer, DevOps Engineer, or similar position.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, I'm typically travelling,
-        trying out new recipes, reading, or hiking with my dog Vito in the beautiful{' '}
+        In my free time, I'm typically traveling, trying out new recipes, reading, or hiking with my dog Vito in the beautiful{' '}
         <strong className="text-stone-100">Greater Cleveland area</strong>.
       </p>
     </>
   ),
   actions: [
     {
-      href: '/assets/resume.pdf',
+      href: '/assets/Drew_Lauck_Resume.pdf',
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
+      target: '_blank',
+      rel: 'noopener noreferrer',
     },
     {
       href: `#${SectionId.Contact}`,
@@ -102,7 +103,7 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `I'm Drew Lauck, a Cloud Engineer with a strong focus on DevOps, automation, and cloud infrastructure in Azure and AWS. I specialize in system optimization, access management, and debugging while leveraging tools like Active Directory, VMware, and Datadog.
+  description: `I'm a Cloud Engineer with a strong focus on DevOps, automation, and cloud infrastructure in Azure and AWS. I specialize in system optimization, access management, and debugging while leveraging tools like Active Directory, VMware, and Datadog.
   Passionate about scalability, security, and efficiency, I’m always exploring new technologies to improve cloud operations and streamline DevOps workflows.`,
   aboutItems: [
     {label: 'Location', text: 'Westlake, OH', Icon: MapIcon},

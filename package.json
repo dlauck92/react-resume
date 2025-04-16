@@ -12,6 +12,8 @@
     "sitemap": "yarn next-sitemap"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.787.0",
+    "@aws-sdk/s3-request-presigner": "^3.787.0",
     "@headlessui/react": "^1.7.16",
     "@heroicons/react": "^2.0.18",
     "@sendgrid/mail": "^8.1.4",
