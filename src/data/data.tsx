@@ -73,7 +73,7 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a U.S. based <strong className="text-stone-100">Cloud Engineer</strong>, currently looking for work as a Cloud Engineer, DevOps Engineer, or similar position.
+        I'm a U.S. based <strong className="text-stone-100">Technical Support Engineer</strong>, currently looking for work as a Technical Support Engineer, Cloud Engineer, DevOps Engineer, or similar position.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         In my free time, I'm typically traveling, trying out new recipes, reading, or hiking with my dog Vito in the beautiful{' '}
