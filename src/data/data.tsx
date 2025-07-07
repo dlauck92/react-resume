@@ -14,18 +14,19 @@ import LinkedInIcon from '../components/Icon/LinkedInIcon';
 import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
 // import TwitterIcon from '../components/Icon/TwitterIcon';
 import heroImage from '../images/header-background.webp';
-import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
-// import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
-// import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
-// import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
-// import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
-// import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
 // import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
 // import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
 // import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
 // import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
 // import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
-import profilepic from '../images/profilepic.jpg';
+// import profilepic from '../images/profilepic.jpg';
+// import profileImg from '../images/headshot.jpg';
+import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
+import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
+import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
+import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
+import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
+import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
 // import testimonialImage from '../images/testimonial.webp';
 import {
   About,
@@ -73,10 +74,10 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a U.S. based <strong className="text-stone-100">Technical Support Engineer</strong>, currently looking for work as a Technical Support Engineer, Cloud Engineer, DevOps Engineer, or similar position.
+        I'm a <strong className="text-stone-100">Technical Support Engineer</strong> with expertise in cloud infrastructure, DevOps automation, and system optimization. Currently seeking opportunities in <strong className="text-stone-100">Cloud Engineering, DevOps, or Technical Support</strong> roles.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time, I'm typically traveling, trying out new recipes, reading, or hiking with my dog Vito in the beautiful{' '}
+        When I'm not troubleshooting systems or building solutions, you'll find me exploring new recipes, hiking with my dog Vito, or discovering the hidden gems of the{' '}
         <strong className="text-stone-100">Greater Cleveland area</strong>.
       </p>
     </>
@@ -102,13 +103,13 @@ export const heroData: Hero = {
  * About section
  */
 export const aboutData: About = {
-  profileImageSrc: profilepic,
-  description: `I'm a Cloud Engineer with a strong focus on DevOps, automation, and cloud infrastructure in Azure and AWS. I specialize in system optimization, access management, and debugging while leveraging tools like Active Directory, VMware, and Datadog.
-  Passionate about scalability, security, and efficiency, I’m always exploring new technologies to improve cloud operations and streamline DevOps workflows.`,
+  profileImageSrc: '', // Remove the image
+  description: `As a Technical Support Engineer turned Cloud enthusiast, I specialize in bridging the gap between complex infrastructure and practical solutions. My experience spans cloud platforms (AWS, Azure), automation tools, and enterprise systems like Active Directory and VMware.
+
+I thrive on solving challenging problems, optimizing system performance, and helping teams implement scalable, secure solutions. Whether it's debugging production issues or architecting cloud workflows, I bring both technical expertise and clear communication to every project.`,
   aboutItems: [
     {label: 'Location', text: 'Westlake, OH', Icon: MapIcon},
     {label: 'Age', text: '32', Icon: CalendarIcon},
-    // {label: 'Nationality', text: 'American', Icon: FlagIcon},
     {label: 'Study', text: 'Case Western Reserve - Coding Bootcamp', Icon: AcademicCapIcon},
     {label: 'Employment', text: 'Looking for work', Icon: BuildingOffice2Icon},
     {label: 'Interests', text: 'Cooking, Reading, Video Games, Hiking', Icon: SparklesIcon}
@@ -120,7 +121,7 @@ export const aboutData: About = {
  */
 export const skills: SkillGroup[] = [
   {
-    name: 'Cloud Engineering',
+    name: 'Cloud & Infrastructure',
     skills: [
       {
         name: 'AWS',
@@ -131,20 +132,20 @@ export const skills: SkillGroup[] = [
         level: 5,
       },
       {
-        name: 'Google',
+        name: 'Google Cloud',
         level: 3,
       },
     ],
   },
   {
-    name: 'Frontend development',
+    name: 'Frontend Development',
     skills: [
       {
         name: 'React',
         level: 9,
       },
       {
-        name: 'Typescript',
+        name: 'TypeScript',
         level: 7,
       },
       {
@@ -154,36 +155,36 @@ export const skills: SkillGroup[] = [
     ],
   },
   {
-    name: 'Backend development',
+    name: 'Backend Development',
     skills: [
       {
         name: 'Node.js',
         level: 8,
       },
       {
-        name: 'Rust',
-        level: 5,
+        name: 'Python',
+        level: 6,
       },
       {
-        name: 'Golang',
-        level: 4,
+        name: 'Rust',
+        level: 5,
       },
     ],
   },
   {
-    name: 'Mobile development',
+    name: 'DevOps & Automation',
     skills: [
       {
-        name: 'React Native',
-        level: 9,
+        name: 'Docker',
+        level: 7,
       },
       {
-        name: 'Flutter',
-        level: 4,
+        name: 'CI/CD',
+        level: 6,
       },
       {
-        name: 'Swift',
-        level: 3,
+        name: 'Infrastructure as Code',
+        level: 6,
       },
     ],
   },
@@ -195,7 +196,7 @@ export const skills: SkillGroup[] = [
 export const portfolioItems: PortfolioItem[] = [
   {
     title: 'SpaceX Rocket Launches',
-    description: 'Give a short description of your project here.',
+    description: 'A React application built with Apollo GraphQL to fetch and display real-time SpaceX launch data. Features responsive design and interactive filtering capabilities.',
     url: 'https://github.com/dlauck92/react-apollo-graphql-spacex',
     image: porfolioImage1,
   },
@@ -203,20 +204,33 @@ export const portfolioItems: PortfolioItem[] = [
     title: 'Lambda Image Resizer',
     description: 'A lightweight, serverless image processing tool built with AWS Lambda and Sharp. It automatically resizes images uploaded to an S3 bucket and saves the optimized output to a destination bucket—scalable, efficient, and fully cloud-native.',
     url: 'https://github.com/dlauck92/lambda-image-resizer',
-    image: porfolioImage1,
+    image: porfolioImage2,
   },
   {
     title: 'Weather Application',
-    description: 'A simple weather application built with React, Bootstrap, National Weather Service API, Python and Flask. It provides weather updates and forecasts for any location based on City and State.',
+    description: 'A responsive weather application built with React, Bootstrap, and the National Weather Service API. Provides real-time weather updates and forecasts with a Python Flask backend for enhanced data processing.',
     url: 'https://github.com/dlauck92/weather-app',
-    image: porfolioImage1,
+    image: porfolioImage3,
   },
   {
     title: '100 Days of Code',
-    description: 'Python Udemy Course Going through 100 days of code.',
+    description: 'A comprehensive Python learning journey covering fundamentals to advanced concepts. Demonstrates consistent skill development and hands-on project experience through daily coding challenges.',
     url: 'https://github.com/dlauck92/100-days-of-code',
-    image: porfolioImage1,
+    image: porfolioImage4,
   },
+  {
+    title: 'AWS Cost Explorer Dashboard',
+    description: 'An interactive dashboard built with AWS services to visualize and analyze cloud cost and usage data. Helps organizations optimize their cloud spending through detailed insights and reporting.',
+    url: 'https://github.com/dlauck92/aws-cost-dash',
+    image: porfolioImage5,
+  },
+  {
+    title: 'React Resume Website',
+    description: 'A modern, responsive personal website built with React and Tailwind CSS. Features dynamic content, portfolio showcase, and optimized performance for showcasing professional experience and skills.',
+    url: 'https://github.com/dlauck92/react-resume',
+    image: porfolioImage6,
+  },
+
 
 ];
 
@@ -245,11 +259,7 @@ export const experience: TimelineItem[] = [
     title: 'Tier 2 Technical Support Engineer',
     content: (
       <p>
-        Worked with Azure, Active Directory, Private Access Management systems, VMware, Slack, Datadog, macOS, Windows and SalesForce. 
-        Assisted customers via tickets or call to create/manage policies to provide least
-        privileged access across their entire company to ensure security. Answered questions from team about cases, roadmaps and development issues.
-        Helped development team investigate bugs and contribute to brainstorming for solutions.
-        Assisted with training new hires by working with them on cases and invite to calls with clients.
+        Led Tier 2 technical support for enterprise clients, specializing in Azure Active Directory and Private Access Management solutions. Collaborated with development teams to resolve critical bugs, mentored new hires, and maintained high customer satisfaction scores while managing complex security implementations across diverse technology stacks including VMware, Slack, Datadog, and Salesforce.
       </p>
     ),
   },
@@ -259,14 +269,7 @@ export const experience: TimelineItem[] = [
     title: 'SysOps Support Developer 2',
     content: (
       <p>
-        Monitored system performance and identified areas for improvement in existing
-        applications. Conducted regular audits of existing systems infrastructure in order to identify
-        potential risks or vulnerabilities. Developed scripts in order to automate routine tasks
-        within the IT environment. Troubleshot application errors in production environments (Kentico, Umbraco,
-        WordPress, and Sitefinity) and worked with development teams to resolve issues
-        quickly. Created detailed internal documentation of system configurations, processes,
-        and procedures for reference purposes. Implemented software patches and upgrades while ensuring minimal disruption
-        to operations.
+        Optimized system performance and identified improvement opportunities across multiple web applications. Conducted comprehensive security audits of infrastructure systems, developed automation scripts for routine IT tasks, and troubleshot production environment issues for Kentico, Umbraco, WordPress, and Sitefinity platforms. Created detailed technical documentation and implemented software patches while ensuring minimal operational disruption.
       </p>
     ),
   },
@@ -276,10 +279,7 @@ export const experience: TimelineItem[] = [
     title: 'SysOps Support Developer',
     content: (
       <p>
-        Maintained inventory of all software licenses associated with supported
-        applications. Maintained inventory of all software licenses associated with supported
-        applications. Performed and lead QA testing for applications. Created technical documentation for specific disciplines to help optimize
-        processes. Recommended and installed hardware solutions to meet business needs. Recommended and installed hardware solutions to meet business needs.
+        Managed comprehensive software license inventory and led QA testing initiatives for multiple applications. Developed technical documentation to optimize team processes, recommended and implemented hardware solutions to meet evolving business needs, and established best practices for system maintenance and support workflows.
       </p>
     ),
   },
@@ -289,9 +289,7 @@ export const experience: TimelineItem[] = [
     title: 'Digital Support/.NET Developer',
     content: (
       <p>
-        Reviewed and assessed incoming support request. These were then sent out to
-        other members on the team based on skill level or relevance. Resolved and de-escalated issues to address customer concerns. 
-        Resolved several low - medium priority support requests. Utilized problem solving skills to effectively handle difficult situations.
+        Coordinated incoming support requests and strategically distributed workload based on team expertise and priority levels. Resolved customer concerns through effective problem-solving and de-escalation techniques, while successfully handling multiple low to medium priority support requests to maintain high service quality standards.
       </p>
     ),
   },
@@ -301,11 +299,7 @@ export const experience: TimelineItem[] = [
     title: 'Developer',
     content: (
       <p>
-        Performed unit testing of code to ensure application functionality. Made pragmatic and data-driven decisions to meet business and technology
-        needs. Wrote and updated computer programs or software packages to handle specific
-        tasks. Integrated third-party libraries into existing applications for added features and
-        functionality. Developed complex web applications using HTML, CSS, JavaScript and JQuery
-        technologies.
+        Developed and maintained complex web applications using HTML, CSS, JavaScript, and jQuery technologies. Performed comprehensive unit testing to ensure application functionality, integrated third-party libraries for enhanced features, and made data-driven decisions to align technology solutions with business objectives.
       </p>
     ),
   },
@@ -324,8 +318,8 @@ export const testimonial: TestimonialSection = {
  */
 
 export const contact: ContactSection = {
-  headerText: 'Get in touch.',
-  description: 'Feel free to reach out with any questions, opportunities, or collaborations. I look forward to connecting with you!',
+  headerText: 'Let\'s Connect.',
+  description: 'Whether you have a project in mind, want to discuss opportunities, or just want to chat about cloud technologies, I\'d love to hear from you!',
   items: [
     {
       type: ContactType.Email,
