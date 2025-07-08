@@ -84,7 +84,7 @@ export const heroData: Hero = {
   ),
   actions: [
     {
-      href: '/assets/Drew_Lauck_Resume.pdf',
+      href: '/assets/Drew_Lauck_Resume_TSE.pdf',
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
